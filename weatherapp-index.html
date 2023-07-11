@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 23px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            transition: all ease-in 1s;
+        }
+        .container {
+            width: 440px;
+            transform: translateY(79px);
+            background: linear-gradient(135deg, #00feba, #5b548a);
+            color: #fff;
+            padding: 40px 35px;
+            border-radius: 19px;
+            text-align: center;
+        }
+        .collecting-data {
+            width: 100%;
+            display: flex;
+        }
+        input[type='text'] {
+            width: 71%;
+            padding: 13px;
+            border-radius: 3px;
+            border: 1px solid gray;
+            outline: none;
+            text-transform: capitalize;
+        }
+        input[type='text']:hover, input[type='text']:focus {
+            box-shadow: inset 1px 1px 7px greenyellow, inset -1px -1px 5px rgb(168, 155, 180);
+        }
+        button#search-btn {
+            width: 23%;
+            border: none;
+            color: darkslateblue;
+            padding: 13px 0px;
+            font-size: 19px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 550;
+            border-radius: 3px;
+        }
+        button#search-btn:hover {
+            background: linear-gradient(to right, purple, lightblue);
+            padding: 13px 0;
+            color: white;
+        }
+        button#search-btn:active {
+            background: linear-gradient(to right, rgb(92, 8, 92), rgb(49, 93, 107));
+        }
+        #forecast h1 {
+            font-size: 80px;
+            font-weight: 500;
+        }
+        #forecast h2 {
+            font-size: 45px;
+            font-weight: 400;
+            margin-top: -10px;
+        }
+        .weather-icon {
+            width: 170px;
+            margin-top: 30px;
+            border-radius: 16px;
+        }
+        .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            margin-top: 23px;
+        }
+        .col {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+        .col img {
+            width: 40px;
+        }
+        .humidity, .wind {
+            font-size: 28px;
+        }
+        #forecast {
+            display: none;
+        }
+        .error {
+            text-align: left;
+            margin-left: 10px;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="collecting-data">
+            <input type="text" name="city" id="city-name" placeholder="Enter a city" autocomplete="on"/>
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="error">
+            Invalid city name
+        </div>
+        <div id="forecast">
+            <img src="./images/rain" alt="rain" class="weather-icon">
+            <h1 class="temp">22⁰c</h1>
+            <h2 class="city">Chicago</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="./images/humidity1.png" alt="humidity">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./images/wind-deta.png" alt="wind">
+                    <div>
+                        <p class="wind">5 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./weatherApp.js"></script>
+</body>
+</html>
